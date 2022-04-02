@@ -39,13 +39,14 @@ void loop() {
 
   totalHours = totalTime/3600000; //3 600 000 milliseconds in 1 hour
   extra_minutes = (totalTime%3600000)/60000; // kan nu getoond worden in ...uren ...minuten
-
+  
+  //Kan nu getoond worden op een display of doorgestuurd worden naar het centrale onderdeel
 
   esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP*uS_TO_S);
   esp_deep_sleep_start();
 
 
-  //Kan nu getoond worden op een display of doorgestuurd worden naar het centrale onderdeel
+  
   
 }
 
