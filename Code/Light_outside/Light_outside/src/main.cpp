@@ -30,7 +30,9 @@ void setup()
 
   //Meten wat beginwaarde is bij opstarten
   for(int i = 0; i<10;i++){
-    als.getALSLux(old_lux);
+    als.getALSLux(lux);
+    old_lux += lux;
+    delay(200);
   }
   old_lux = old_lux/10;
 }
