@@ -3,7 +3,7 @@
 #include <Wire.h>
 #include "DFRobot_VEML7700.h"
 
-#define mosfet 17
+#define power_veml 17
 
 #define uS_TO_S 1000000
 #define TIME_TO_SLEEP_START_VEML 30 //aantal seconden in deep sleep voor opstarten VEML
@@ -46,7 +46,7 @@ void setup()
 void loop()
 {
   //PIN HIGH mosfet
-  digitalWrite(mosfet, HIGH);
+  digitalWrite(power_veml, HIGH);
 
   //deep sleep voor VEML op te starten
   esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP_START_VEML*uS_TO_S);
@@ -73,7 +73,7 @@ void loop()
   }
 
   //PIN LOW mosfet
-  digitalWrite(mosfet,LOW);
+  digitalWrite(power_veml,LOW);
 
   //deep sleep 5 minuten
   esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP*uS_TO_S);
